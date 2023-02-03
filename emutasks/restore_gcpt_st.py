@@ -11,19 +11,15 @@ from emutasks import EmuTasksConfig
 # `emu` 自动化测试
 
 debug = False
-num_threads = 128
-
+num_threads = 512
+# 06 代表spec06，对应还有17
 ver = '06'
-# exe = f'/bigdata/ljw/xs-emus/emu'
-# exe = f'/nfs/home/goulingrui/emu-faubtb-perf-base-16t'
-exe_threads = 16
-# exe = f'/nfs/home/goulingrui/emu-faubtb-perf-16t'
-exe = f'/nfs/home/goulingrui/emu-faubtb-perf-new-mechanism-16t'
+exe_threads = 8
+exe = f'/nfs/home/guohongyu/emufile/fdip-64set-8way-icache-newipfbuffer-emu'
 exe_name = exe.split('/')[-1]
-data_dir = f'{lc.cpt_top}/spec{ver}_rv64gcb_o2_20m/take_cpt/' # cpt dir
-top_output_dir = '/nfs/home/goulingrui/expri_results/' # output dir
-# simpoints_file = f'{lc.cpt_top}/spec{ver}_rv64gcb_o2_20m/json/simpoint_summary.json'
-simpoints_file = f'{lc.cpt_top}/spec{ver}_rv64gcb_o2_20m/json/simpoint_coverage0.3_test.json'
+data_dir = f'{lc.cpt_top}/spec{ver}_rv64gc_o2_50m/take_cpt/' # cpt dir
+top_output_dir = '/nfs/home/guohongyu/spec_result' # output dir
+simpoints_file = f'/nfs/home/guohongyu/emufile/simpoint_icache_rv64gc_o2_50m_test.json'
 
 
 workload_filter = []
