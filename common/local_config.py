@@ -21,7 +21,7 @@ else:
 if 'Shared_Result_Top' in os.environ:
     shared_result_top = os.environ['Shared_Result_Top']
 else:
-    shared_result_top = '/nfs/home/goulingrui/project/expri_results'
+    shared_result_top = '/nfs/home/guohongyu/shared_spec_result'
 
 # /path/to/spec2006/benchspec/CPU2006
 spec_cpu_2006_dir = '/no/where'

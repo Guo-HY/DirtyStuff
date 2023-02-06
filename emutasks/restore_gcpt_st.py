@@ -14,7 +14,7 @@ debug = False
 num_threads = 512
 # 06 代表spec06，对应还有17
 ver = '06'
-exe_threads = 8
+exe_threads = 16
 exe = f'/nfs/home/guohongyu/emufile/fdip-64set-8way-icache-newipfbuffer-emu'
 exe_name = exe.split('/')[-1]
 data_dir = f'{lc.cpt_top}/spec{ver}_rv64gc_o2_50m/take_cpt/' # cpt dir
