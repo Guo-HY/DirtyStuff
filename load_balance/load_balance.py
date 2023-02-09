@@ -5,7 +5,7 @@ import json
 
 machine_config = '/nfs/home/guohongyu/.config/dispatch.json'
 machine_threads = 16 # 仿真使用的处理器线程数，应该与编译emu时指定的线程数一致
-hostname = "open15" # 在哪个节点上跑仿真
+hostname = "open16" # 在哪个节点上跑仿真
 
 def get_machine_hash(task='xiangshan'):
     hash_ids = {}
@@ -17,7 +17,7 @@ def get_machine_hash(task='xiangshan'):
         for i in range(0, js[host]['load']):
             hash_ids[host].append(cursor)
             cursor += 1
-    hostname = platform.node()
+    # hostname = platform.node()
     return hash_ids[hostname], cursor
 
 def get_machine_threads(task='xiangshan'):

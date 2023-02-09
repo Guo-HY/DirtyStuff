@@ -7,8 +7,9 @@ import random
 base_dir = "/nfs/home/guohongyu/spec_result/xs_simpoint_batch/"
 emu_result_name = "emu_result.json"
 result_dirs = {
+  "SPEC06_EmuTasksConfig_2023-02-06_fdip-64set-8way-icache-noprefetch-emu" : "64set-8way-noprefetch",
   "SPEC06_EmuTasksConfig_2023-02-03_fdip-64set-8way-icache-newipfbuffer-emu" : "2-3-fdip-64set-8way-newipfbuffer",
-  "SPEC06_EmuTasksConfig_2023-01-30_fdip-32kb-prefetch-emu" : "1-30-fdip-32kb-hasprefetch",
+  "SPEC06_EmuTasksConfig_2023-02-01_fdip-128set-8way-icache-noprefetch-emu" : "128set-8way-noprefetch"
 }
 
 alltestpoint_set = set()
@@ -40,7 +41,6 @@ for result_dir in result_dirs.keys():
       alltestpoint_ipc[result_name].append(float(result[benchmark][testpoint]["IPC"]))
     
 
-color = 1600
 x = list(range(len(alltestpoint_list)))
 alltestpointname = []
 for tuple in alltestpoint_list:
@@ -49,11 +49,13 @@ total_width, n = 0.8, len(result_dirs)
 width = total_width / n
 
 plt.figure(figsize=(30,24))
-color = ['r','g','b']
+color = ['#D2B48C','#FF8C00','#8B4513']
+color_ptr = 0
 for result_name in alltestpoint_ipc.keys():
   ipcs = alltestpoint_ipc[result_name]
-  t = plt.bar(x, ipcs, width=width, label=result_name, color=color[random.randint(0,len(color)-1)])
-  plt.bar_label(t, padding=3)
+  t = plt.bar(x, ipcs, width=width, label=result_name, color=color[color_ptr])
+  color_ptr = color_ptr + 1
+  plt.bar_label(t, padding=3, fmt='%.2f')
   for i in range(len(x)):
     x[i] = x[i] + width
 

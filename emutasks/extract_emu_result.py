@@ -14,7 +14,7 @@ emu_result_file_name = "emu_result.json"
 
 icache_sim_path = f"{py_path}/icache_sim"
 os.system(f"g++ {py_path}/icache_sim.cpp -o {icache_sim_path}")
-enable_icache_sim = True
+enable_icache_sim = False
 
 js = {}
 

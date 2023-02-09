@@ -11,11 +11,11 @@ from emutasks import EmuTasksConfig
 # `emu` 自动化测试
 
 debug = False
-num_threads = 512
+num_threads = 128
 # 06 代表spec06，对应还有17
 ver = '06'
 exe_threads = 16
-exe = f'/nfs/home/guohongyu/emufile/fdip-64set-8way-icache-newipfbuffer-emu'
+exe = f'/nfs/home/guohongyu/emufile/nanhu-icache-nocoherence-256set-4way-emu'
 exe_name = exe.split('/')[-1]
 data_dir = f'{lc.cpt_top}/spec{ver}_rv64gc_o2_50m/take_cpt/' # cpt dir
 top_output_dir = '/nfs/home/guohongyu/spec_result' # output dir
