@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-#define SET_NUM 64
+#define SET_NUM 128
 #define WAY_NUM 8
 
 #define OPEN_FILE_ERR 1
